@@ -1,5 +1,6 @@
 package States.FloatingPoint
 import NON_ZERO_DIGITS
+import States.InvalidState
 import States.State
 
 class FirstValueState_FP: State {
@@ -7,6 +8,6 @@ class FirstValueState_FP: State {
         in NON_ZERO_DIGITS -> HasDigitState_FP()
         "0" -> ZeroFirstState_FP()
         "." -> HasPeriodState_FP()
-        else -> InvalidState_FP()
+        else -> InvalidState()
     }
 }

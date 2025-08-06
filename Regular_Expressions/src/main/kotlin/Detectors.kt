@@ -20,3 +20,13 @@ fun isValidInteger(value: String): Boolean {
 
     return state is States.Integer.ValidState_INT
 }
+
+fun isValidBinary(value: String): Boolean {
+    var state: State = States.Binary.FirstValueState_BIN()
+
+    for (letter in value) {
+        state = state.consumeLetter(letter.toString())
+    }
+
+    return state is States.Binary.ValidState_BIN
+}

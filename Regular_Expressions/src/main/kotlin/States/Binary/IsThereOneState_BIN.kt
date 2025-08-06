@@ -1,13 +1,12 @@
-package States.FloatingPoint
+package States.Binary
 
-import DIGITS
 import States.InvalidState
 import States.State
 
-class HasDigitState_FP: State {
+class IsThereOneState_BIN: State {
     override fun consumeLetter(letter: String) = when(letter){
-        in DIGITS -> this
-        "." -> HasPeriodState_FP()
+        "1" -> ValidState_BIN()
+        "0" -> this
         else -> InvalidState()
     }
 }
