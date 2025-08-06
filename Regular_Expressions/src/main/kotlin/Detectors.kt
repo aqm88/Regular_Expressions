@@ -10,3 +10,13 @@ fun isValidFloatingPoint(value: String): Boolean{
 
     return state is States.FloatingPoint.ValidState_FP
 }
+
+fun isValidInteger(value: String): Boolean {
+    var state: State = States.Integer.FirstValueState_INT()
+
+    for (letter in value) {
+        state = state.consumeLetter(letter.toString())
+    }
+
+    return state is States.Integer.ValidState_INT
+}
