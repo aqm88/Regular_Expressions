@@ -40,3 +40,18 @@ fun isValidEmail(value: String): Boolean {
 
     return state is States.Email.ValidState_EM
 }
+
+fun isValidPassword(value: String): Boolean {
+
+    if(value.length < 8) {
+        return false
+    }
+
+    var state: State = States.Password.ProcessValueState_PW()
+
+    for (letter in value) {
+        state = state.consumeLetter(letter.toString())
+    }
+
+    return state is States.Password.ValidState_PW
+}

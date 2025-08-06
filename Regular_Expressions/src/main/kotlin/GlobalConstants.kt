@@ -1,2 +1,3 @@
 val DIGITS = "0123456789"
 val NON_ZERO_DIGITS = "123456789"
+val SPECIAL_CHARS = "!@#\\$%&*"
