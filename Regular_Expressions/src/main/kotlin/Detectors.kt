@@ -30,3 +30,13 @@ fun isValidBinary(value: String): Boolean {
 
     return state is States.Binary.ValidState_BIN
 }
+
+fun isValidEmail(value: String): Boolean {
+    var state: State = States.Email.FirstValueState_EM()
+
+    for (letter in value) {
+        state = state.consumeLetter(letter.toString())
+    }
+
+    return state is States.Email.ValidState_EM
+}
